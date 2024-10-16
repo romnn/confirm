@@ -3,7 +3,7 @@
 ##### Installation
 
 ```bash
-go install github.com/romnn/confirm
+go install github.com/romnn/confirm@latest
 ```
 
 ##### Usage
