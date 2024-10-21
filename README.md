@@ -6,7 +6,7 @@
 A dead simple CLI app that asks the user for a yes/no confirmation.
 
 ```bash
-go install github.com/romnn/confirm@latest
+go install github.com/romnn/confirm@main
 ```
 
 #### Usage
