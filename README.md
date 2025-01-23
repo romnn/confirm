@@ -6,7 +6,10 @@
 A dead simple CLI app that asks the user for a yes/no confirmation.
 
 ```bash
-go install github.com/romnn/confirm@main
+brew install romnn/tap/confirm
+
+# or install from source
+go install 'github.com/romnn/confirm@main'
 ```
 
 #### Usage
@@ -24,7 +27,7 @@ To use the provided tasks in `taskfile.yaml`, install [task](https://taskfile.de
 # view all available tasks
 task --list-all
 # install development tools
-task dependencies:install
+task dev:tools:install
 ```
 
 After setup, you can use the following tasks during development:
@@ -32,7 +35,7 @@ After setup, you can use the following tasks during development:
 ```bash
 task tidy
 task run:race
-task run:race -- validate -s ./schema.json -v ./values.json
+task run:race -- <your-arguments>
 task build:race
 task test
 task lint

@@ -2,3 +2,6 @@
 
 # ignore binary
 /confirm
+
+# goreleaser dist
+/dist
