@@ -19,7 +19,10 @@ jobs:
       - uses: arduino/setup-task@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: Homebrew/actions/setup-homebrew@master
       - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
       - name: Install development tools
         run: task dev:tools:install --output group --output-group-error-only
       - name: Lint
