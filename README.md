@@ -6,9 +6,9 @@
 A dead simple CLI app that asks the user for a yes/no confirmation.
 
 ```bash
-brew install romnn/tap/confirm
+brew install --cask romnn/tap/confirm
 
-# or install from source
+# Or install from source
 go install 'github.com/romnn/confirm@main'
 ```
 
@@ -24,10 +24,8 @@ confirm "are you sure you want to proceed?"
 To use the provided tasks in `taskfile.yaml`, install [task](https://taskfile.dev/).
 
 ```bash
-# view all available tasks
+# View all available tasks
 task --list-all
-# install development tools
-task dev:tools:install
 ```
 
 After setup, you can use the following tasks during development:

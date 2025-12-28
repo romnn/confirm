@@ -5,10 +5,10 @@ before:
   hooks:
     - go mod tidy
 
-brews:
-  - name: confirm
+homebrew_casks:
+  - name: &confirm confirm
     description: "A dead simple CLI app that asks the user for a yes/no confirmation"
-    directory: Formula
+    directory: Casks
     commit_author:
       name: romnn
       email: contact@romnn.com
@@ -19,9 +19,15 @@ brews:
       token: "{{ .Env.TAP_GITHUB_TOKEN }}"
       pull_request:
         enabled: false
+    hooks:
+      post:
+        install: |
+          if OS.mac? && File.exist?("/usr/bin/xattr")
+            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/confirm"]
+          end
 
 builds:
-  - id: confirm
+  - id: *confirm
     main: ./
     binary: ./bin/confirm
     env:
@@ -43,7 +49,7 @@ builds:
       - arm64
 
 upx:
-  - ids: [confirm]
+  - ids: [*confirm]
     enabled: true
     goos: [linux]
     compress: best
