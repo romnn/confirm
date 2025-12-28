@@ -24,6 +24,8 @@ jobs:
         with:
           go-version: "stable"
       - name: Install development tools
-        run: task dev:tools:install --output group --output-group-error-only
+        run: |
+          brew install staticcheck
+          brew install golangci-lint
       - name: Lint
         run: task lint --output group --output-group-error-only

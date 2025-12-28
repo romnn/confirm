@@ -23,8 +23,10 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: "stable"
+      - uses: dtolnay/rust-toolchain@stable
       - name: Install development tools
-        run: task dev:tools:install --output group --output-group-error-only
+        run: |
+          brew install richgo
       - name: Build
         run: task build:race --output group --output-group-error-only
       - name: Test

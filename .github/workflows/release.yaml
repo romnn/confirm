@@ -21,7 +21,9 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: stable
-      - run: task dev:tools:install --output group --output-group-error-only
+      - name: Install development tools
+        run: |
+          brew install goreleaser
       - name: Release
         run: task release --output group
         env:
