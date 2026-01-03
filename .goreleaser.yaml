@@ -29,7 +29,7 @@ homebrew_casks:
 builds:
   - id: *confirm
     main: ./
-    binary: ./bin/confirm
+    binary: confirm
     env:
       - CGO_ENABLED=0
     ldflags:
